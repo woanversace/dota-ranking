@@ -1,0 +1,93 @@
+
+// border radius mixin
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin custom-border-top-left($radius) {
+	border-top-left-radius: $radius;
+	-moz-border-top-left-radius: $radius;
+	-webkit-border-top-left-radius: $radius;
+}
+
+@mixin custom-border-top-right($radius) {
+	border-top-right-radius: $radius;
+	-moz-border-top-right-radius: $radius;
+	-webkit-border-top-right-radius: $radius;
+}
+
+@mixin custom-border-bottom-left($radius) {
+	border-bottom-left-radius: $radius;
+	-moz-border-bottom-left-radius: $radius;
+	-webkit-border-bottom-left-radius: $radius;
+}
+
+@mixin custom-border-bottom-right($radius) {
+	border-bottom-right-radius: $radius;
+	-moz-border-bottom-right-radius: $radius;
+	-webkit-border-bottom-right-radius: $radius;
+}
+
+@mixin custom-border-top($radius) {
+	@include custom-border-top-right($radius);
+	@include custom-border-top-left($radius);
+}
+
+// transparent-background
+.transparent-background {
+	background-color: transparent;
+	zoom: 1;
+}
+
+// mixin backgroud transparent
+@mixin background-transparent($color, $alpha) {
+	$rgba: rgba($color, $alpha);
+	$ie-hex-str: ie-hex-str($rgba);
+	@extend .transparent-background;
+	background-color: $color;
+	background-color: $rgba;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+}
+
+// border transparent
+@mixin border-transparent($color, $alpha) {
+	$rgba: rgba($color, $alpha);
+	$ie-hex-str: ie-hex-str($rgba);
+	border-color: $color;
+	border-color: $rgba;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+}
+
+@mixin box-shadow($x, $y, $blur, $color, $inset) {
+  @if ($inset != "") {
+    -webkit-box-shadow: $inset $x $y $blur $color;
+    -moz-box-shadow:    $inset $x $y $blur $color;
+    box-shadow:         $inset $x $y $blur $color;
+  } @else {
+    -webkit-box-shadow: $x $y $blur $color;
+    -moz-box-shadow:    $x $y $blur $color;
+    box-shadow:         $x $y $blur $color;
+  }
+}
+
+@mixin transition(){
+
+}
+
+@mixin transform-element($degree) {
+	-webkit-transform: 	rotate($degree);
+	-moz-transform: 	rotate($degree);
+	-ms-transform: 		rotate($degree);
+	-o-transform: 		rotate($degree);
+	transform: 			rotate($degree);
+}
+@mixin linear-gradient-top-bottom($top, $bottom) {
+	background: -webkit-linear-gradient($top, $bottom); /* For Safari */
+	background: -o-linear-gradient($top, $bottom); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient($top, $bottom); /* For Firefox 3.6 to 15 */
+	background: linear-gradient($top, $bottom); /* Standard syntax */
+}

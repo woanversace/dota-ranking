@@ -1,0 +1,56 @@
+doctype html
+html
+	head
+		meta(content="text/html", charset="UTF-8", http-equiv="Content-Type")
+		title <%= @document.title %>
+		meta(content="width = device-width, initial-scale = 1.0", name="viewport")
+		link(href="/styles/bootstrap.css", rel="stylesheet")
+		link(href="/styles/selectize.bootstrap3.css", rel="stylesheet")
+		link(href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", rel="stylesheet")
+		link(href="/styles/main.css", rel="stylesheet")
+		script src="/js/modernizr.js"
+		// if lt IE 9
+			script(src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/2.0.8/es5-shim.min.js")
+			script(src="/js/respond.min.js")
+	body
+		header#header.header.clearfix
+			.container
+				nav.navbar.trajan-bold(role="navigation")
+					.container-fluid
+						//-Brand and toggle get grouped for better mobile display
+						.navbar-header
+							button.navbar-toggle(type="button", data-toggle="collapse", data-target="#main-menu")
+								span.sr-only
+									| Toggle navigation
+								span.icon-bar
+								span.icon-bar
+								span.icon-bar
+							h1.navbar-brand
+								a(href="javascript:void(0);")
+									img.normal(src="/images/en_dota_logo.png")
+									img.hover(src="/images/en_dota_logo_over.png")
+						//- collect the nav links, forms and other content for toggling
+						#main-menu.collapse.navbar-collapse.pull-right
+							ul.nav.navbar-nav
+								li.active
+									a(href="javascript:void(0);") News
+								li
+									a(href="javascript:void(0);") Ranking
+								li
+									a(href="javascript:void(0);") Teams
+								li
+									a(href="javascript:void(0);") Player
+								li
+									a(href="javascript:void(0);") Items
+								li
+									a(href="javascript:void(0);") Guides
+							form.navbar-form.pull-right.form-search(role="search")
+								.form-group
+									input.form-control(type="text", placeholder="search")
+								button.btn.btn-submit(type="submit") Search
+		.wrapper
+			<%- @content %>
+
+
+
+

@@ -1,0 +1,51 @@
+.header {
+
+	position: relative;
+	.nav > li > a {
+
+		font-size: 18px;
+		color: #c33d2b;
+
+		&:hover,
+		&:focus {
+
+			background-color: transparent;
+			color: #c33d2b;
+			text-shadow: 0px 0px 28px rgba(255, 255, 255, 1);
+		}
+	}
+	.nav.navbar-nav {
+		margin-top: 6px;
+	}
+
+	.navbar-collapse {
+		height: 68px;
+	}
+
+	.navbar-brand {
+
+		margin-top: 8px;
+		padding: 0;
+
+		.normal {
+			display: inline-block;
+		}
+
+		.hover {
+			display: none;
+			position: absolute;
+		}
+
+		&:hover,&:focus {
+			.normal {
+				display: none;
+			}
+			.hover {
+				display: inline-block;
+			}
+		}
+	}
+	.navbar-form {
+		margin-top: 14px;
+	}
+}
