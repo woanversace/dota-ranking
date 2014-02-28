@@ -1,0 +1,33 @@
+{
+  "name": "dota-ranking",
+  "version": "0.0.0",
+  "description": "nothing here",
+  "author": {
+    "name": "",
+    "email": "",
+    "url": "https://github.com/"
+  },
+  "main": "node_modules/docpad/bin/docpad-server",
+  "homepage": "https://github.com//dota-ranking",
+  "bugs": "https://github.com//dota-ranking/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com//dota-ranking.git"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "scripts": {
+    "start": "node_modules/docpad/bin/docpad-server"
+  },
+  "dependencies": {
+    "docpad": "~6.49.0",
+    "docpad-plugin-eco": "~2.0.2",
+    "docpad-plugin-marked": "~2.1.1",
+    "docpad-plugin-livereload": "~2.5.1",
+    "docpad-plugin-stylus": "~2.4.0",
+    "docpad-plugin-coffeescript": "~2.2.2",
+    "grunt-read-components": "~0.1.2"
+  }
+}
